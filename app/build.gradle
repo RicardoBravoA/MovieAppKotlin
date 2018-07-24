@@ -18,10 +18,10 @@ android {
             minifyEnabled false
             debuggable true
 
-            buildConfigField "String", "BASE_URL", "$base_url"
-            buildConfigField "String", "MOVIE_POPULAR", "$popular_movie"
-            buildConfigField "String", "TOP_RATED", "$top_rated_movie"
-            buildConfigField "String", "UPCOMING", "$upcoming_movie"
+            buildConfigField "String", "BASE_URL", "$baseUrl"
+            buildConfigField "String", "MOVIE_POPULAR", "$popularMovie"
+            buildConfigField "String", "TOP_RATED", "$topRatedMovie"
+            buildConfigField "String", "UPCOMING", "$upcomingMovie"
 
         }
         release {
@@ -29,10 +29,10 @@ android {
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            buildConfigField "String", "BASE_URL", "$base_url"
-            buildConfigField "String", "MOVIE_POPULAR", "$popular_movie"
-            buildConfigField "String", "TOP_RATED", "$top_rated_movie"
-            buildConfigField "String", "UPCOMING", "$upcoming_movie"
+            buildConfigField "String", "BASE_URL", "$baseUrl"
+            buildConfigField "String", "MOVIE_POPULAR", "$popularMovie"
+            buildConfigField "String", "TOP_RATED", "$topRatedMovie"
+            buildConfigField "String", "UPCOMING", "$upcomingMovie"
 
         }
     }
@@ -40,37 +40,33 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:$support_version"
-    implementation "com.android.support.constraint:constraint-layout:$constratint_layout_version"
-    implementation "com.android.support:design:$support_version"
-    testImplementation "junit:junit:$j_unit_version"
-    androidTestImplementation "com.android.support.test:runner:$test_runner_version"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_core_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    implementation "com.android.support.constraint:constraint-layout:$constratintLayoutVersion"
+    implementation "com.android.support:design:$supportVersion"
+    testImplementation "junit:junit:$jUnitVersion"
+    androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoCoreVersion"
 
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$loggin_interceptor_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logginInterceptorVersion"
 
-    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
-    implementation "io.reactivex.rxjava2:rxandroid:$rx_android_version"
+    testImplementation "android.arch.core:core-testing:$archCoreVersion"
+    implementation "android.arch.lifecycle:runtime:$lifecycleVersion"
+    implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
+    kapt "android.arch.lifecycle:compiler:$lifecycleVersion"
 
-    implementation "com.google.dagger:dagger:$dagger_version"
-    implementation "com.google.dagger:dagger-android:$dagger_version"
-    implementation "com.google.dagger:dagger-android-support:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
-    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
-    compileOnly "javax.annotation:jsr250-api:$javax_annotation_version"
-    implementation "javax.inject:javax.inject:$javax_inject_version"
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
-    implementation "com.android.support:recyclerview-v7:$support_version"
-    implementation "com.android.support:cardview-v7:$support_version"
-    compile "com.android.support:design:$support_version"
+    implementation "com.android.support:recyclerview-v7:$supportVersion"
+    implementation "com.android.support:cardview-v7:$supportVersion"
+    implementation "com.android.support:design:$supportVersion"
 
-}
-
-kapt {
-    generateStubs = true
 }

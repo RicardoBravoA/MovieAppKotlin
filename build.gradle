@@ -1,40 +1,36 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.51'
+    ext.kotlinVersion = '1.2.41'
+    ext.gradlePluginVersion = '3.1.2'
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath "com.android.tools.build:gradle:$gradlePluginVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
 ext {
 
-    retrofit_version = '2.4.0'
-    loggin_interceptor_version = '3.9.1'
-    rx_java_version = '2.1.8'
-    rx_android_version = '2.0.1'
-    dagger_version = '2.16'
-    support_version = '27.1.1'
-    constratint_layout_version = '1.1.2'
-    j_unit_version = '4.12'
-    test_runner_version = '1.0.2'
-    espresso_core_version = '3.0.2'
-    javax_annotation_version = '1.0'
-    javax_inject_version = '1'
+    retrofitVersion = '2.4.0'
+    logginInterceptorVersion = '3.9.1'
+    lifecycleVersion = '1.1.1'
+    archCoreVersion = '1.1.1'
+    daggerVersion = '2.16'
+    supportVersion = '27.1.1'
+    constratintLayoutVersion = '1.1.2'
+    jUnitVersion = '4.12'
+    testRunnerVersion = '1.0.2'
+    espressoCoreVersion = '3.0.2'
 
     //URLS
-    base_url = 'https://api.themoviedb.org/3/'
-    popular_movie = 'movie/popular'
-    top_rated_movie = 'movie/top_rated'
-    upcoming_movie = 'movie/upcoming'
+    baseUrl = 'https://api.themoviedb.org/3/'
+    popularMovie = 'movie/popular'
+    topRatedMovie = 'movie/top_rated'
+    upcomingMovie = 'movie/upcoming'
 
 }
 
