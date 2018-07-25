@@ -1,11 +1,6 @@
 package com.example.s1089656.moviekotlinapp.repository.remote
 
 import com.example.s1089656.moviekotlinapp.repository.remote.exception.DefaultErrorBundle
-import com.example.s1089656.moviekotlinapp.repository.remote.exception.DefaultErrorBundle
-
-
-
-
 
 /**
  * Created by Ricardo Bravo on 23/07/18.
@@ -36,7 +31,6 @@ class FailureResponse<T> {
         } else {
             onboardingStep1View.showError(retrofitException.getMessage())
         }
-
 
 
     }
