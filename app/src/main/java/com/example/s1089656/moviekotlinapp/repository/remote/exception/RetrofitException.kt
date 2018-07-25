@@ -54,12 +54,14 @@ class RetrofitException(private val msg: String?,
                     null, null, Kind.NETWORK, exception, null)
         }
 
-
         fun unexpectedError(context: Context, exception: Throwable): RetrofitException {
             return RetrofitException(context.getString(R.string.exception_message_generic), null, null,
                     Kind.UNEXPECTED, exception, null)
         }
+
     }
+
+    fun errorMessage() = msg
 
     @Throws(IOException::class)
     fun <T> getErrorBodyAs(type: Class<T>): T? {
