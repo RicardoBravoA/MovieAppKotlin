@@ -10,10 +10,12 @@ import com.example.s1089656.moviekotlinapp.repository.remote.exception.ErrorMess
 
 class FailureResponse {
 
-    fun create(context: Context, throwable: Throwable): String {
+    companion object {
+        fun create(context: Context, throwable: Throwable): String {
 
-        val errorBundle = DefaultErrorBundle(throwable as Exception)
-        return ErrorMessageFactory.create(context, errorBundle.getException())
+            val errorBundle = DefaultErrorBundle(throwable as Exception)
+            return ErrorMessageFactory.create(context, errorBundle.getException())
+        }
     }
 
 }

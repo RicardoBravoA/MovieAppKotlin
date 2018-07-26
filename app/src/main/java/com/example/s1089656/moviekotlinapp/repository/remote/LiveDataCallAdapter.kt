@@ -1,6 +1,9 @@
 package com.example.s1089656.moviekotlinapp.repository.remote
 
 import android.arch.lifecycle.LiveData
+import android.content.Context
+import com.example.s1089656.moviekotlinapp.model.FailureModel
+import com.example.s1089656.moviekotlinapp.repository.remote.exception.ErrorMessageFactory
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Callback
@@ -12,7 +15,8 @@ import java.util.concurrent.atomic.AtomicBoolean
  * Created by Ricardo Bravo on 23/07/18.
  */
 
-class LiveDataCallAdapter<T>(private val responseType: Type) : CallAdapter<T, LiveData<T>> {
+class LiveDataCallAdapter<T>(private val c: Context,
+                             private val responseType: Type) : CallAdapter<T, LiveData<T>> {
 
     override fun adapt(call: Call<T>): LiveData<T> =
             object : LiveData<T>() {
@@ -28,7 +32,7 @@ class LiveDataCallAdapter<T>(private val responseType: Type) : CallAdapter<T, Li
                             }
 
                             override fun onFailure(call: Call<T>, t: Throwable) {
-                                postValue("Hola")
+                                postValue(FailureModel(ErrorMessageFactory.create(context = c, throwable = t)))
                             }
 
                         })
